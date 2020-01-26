@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    map <int,string> m;
+    map <int,string> ::iterator it;
+    int a,N = 0;
+    string s;
+    cin >> N;
+    for (int i = 0; i < N; i++)
+    {
+        cin>>s>>a;
+        m.insert(make_pair(a,s));
+    }
+    it=m.begin();
+    for (int i = 0; i < N; i++)
+    {
+        cout<<it->second<<" "<<it->first<<"\n";
+        it++;
+    }
+
+    return 0;
+}
+
+
