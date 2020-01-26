@@ -1,0 +1,47 @@
+#include <cmath>
+#include <cstdio>
+#include <utility>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {  
+    map <string,int> student;
+    int i,n,x,y;
+    string s;
+    cin>>n;
+    for(i=0;i<n;i++){
+        cin>>x;
+        if(x==1)
+        {
+            cin>>s>>y;
+            if(student.find(s)==student.end())
+            {
+              student.insert(make_pair(s,y));
+            }
+            else 
+            {   
+              student[s]+=y;
+            }
+        }
+        else if (x==2) {
+            cin>>s;
+            student.erase(s);
+        }
+        else {
+            cin>>s;
+            if(student.find(s)!=student.end())
+            cout<<student[s]<<"\n";
+            else
+            cout<<"0\n";
+        }
+    }
+    return 0;
+}
+
+
+
